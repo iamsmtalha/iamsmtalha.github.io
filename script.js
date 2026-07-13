@@ -13,8 +13,12 @@ const projects = [
     summary:
       "Analyzed annual members and casual riders to identify behavior differences and marketing opportunities.",
     tools: ["Excel Power Query", "MySQL", "Power BI", "Case Study"],
+    executiveSummary:
+      "Analyzed twelve months of Cyclistic bike-share data to compare annual members and casual riders. The project found that members ride more frequently, while casual riders take longer trips and show stronger weekend and seasonal behavior.",
     business:
       "How do annual members and casual riders use Cyclistic bikes differently, and how can those insights support membership conversion?",
+    dataSource:
+      "Twelve monthly Cyclistic/Divvy bike-share trip CSV files covering one full year of ride-level data.",
     process: [
       "Combined and prepared 12 months of bike-share trip data.",
       "Cleaned ride duration, removed invalid trips, and created weekday, month, and hour fields.",
@@ -25,7 +29,21 @@ const projects = [
       "Casual riders took longer trips on average.",
       "Members showed commute-oriented weekday patterns while casual riders were stronger on weekends."
     ],
-    metrics: ["5.68M", "Final rides", "12 months", "Period", "28", "Duplicates removed"]
+    metrics: ["5.68M", "Final rides", "12 months", "Period", "28", "Duplicates removed"],
+    keyMetrics: [
+      "Final cleaned dataset contained 5,680,812 rides.",
+      "Annual members completed substantially more rides than casual riders.",
+      "Casual riders had longer average ride durations.",
+      "Member usage was strongest on weekdays and commute hours.",
+      "Electric bikes were the most frequently used bike type for both rider groups."
+    ],
+    recommendations: [
+      "Target casual riders with weekend-focused membership promotions.",
+      "Run digital campaigns during warmer months and peak casual riding hours.",
+      "Promote annual membership savings to frequent casual riders, especially electric-bike users."
+    ],
+    conclusion:
+      "Cyclistic should focus conversion campaigns on frequent casual riders by using weekend, seasonal, and electric-bike usage patterns to make membership value more relevant."
   },
   {
     number: "02",
@@ -42,8 +60,12 @@ const projects = [
     summary:
       "Studied Fitbit activity and sleep trends to recommend Bellabeat app marketing improvements.",
     tools: ["Excel", "MySQL", "Power BI", "Wellness Analytics"],
+    executiveSummary:
+      "Analyzed Fitbit smart-device activity and sleep data to understand wellness behavior patterns. Users averaged 7,638 steps, 2,304 calories, 991 sedentary minutes, and 228 active minutes per day, with sleep data available for 24 of 33 users.",
     business:
       "What smart-device usage trends can guide Bellabeat's product positioning and marketing strategy?",
+    dataSource:
+      "FitBit Fitness Tracker Data from Kaggle, including daily activity, sleep, hourly steps, hourly calories, hourly intensities, and weight log files.",
     process: [
       "Prepared daily activity, sleep, and hourly behavior datasets.",
       "Created clean activity levels, sleep measures, and device engagement summaries.",
@@ -54,7 +76,22 @@ const projects = [
       "Sleep tracking participation was lower than activity tracking.",
       "Users with higher activity generally showed stronger wellness engagement signals."
     ],
-    metrics: ["33", "Users", "940", "Daily records", "7.0", "Avg sleep hours"]
+    metrics: ["33", "Users", "940", "Daily records", "7.0", "Avg sleep hours"],
+    keyMetrics: [
+      "33 users in daily activity data and 940 daily records.",
+      "Average daily steps: 7,638.",
+      "Average daily calories: 2,304.",
+      "Average sedentary time: 991 minutes, or 16.5 hours.",
+      "Average sleep: 419 minutes, or 7.0 hours."
+    ],
+    recommendations: [
+      "Position Bellabeat as a holistic wellness companion, not only a step tracker.",
+      "Send movement reminders to users with high sedentary behavior.",
+      "Time motivational app messages around 12 PM and 5 PM to 7 PM.",
+      "Encourage consistent sleep tracking through reminders and weekly summaries."
+    ],
+    conclusion:
+      "Bellabeat can use activity, sedentary, and sleep-tracking patterns to market a complete wellness experience that connects movement, recovery, hydration, mindfulness, and daily routines."
   },
   {
     number: "03",
@@ -70,8 +107,12 @@ const projects = [
     summary:
       "Explored movie performance patterns with Python, pandas, cleaning, visualization, and storytelling.",
     tools: ["Python", "pandas", "Jupyter", "Seaborn"],
+    executiveSummary:
+      "Analyzed movie metadata, ratings, credits, keywords, budget, and revenue fields using Python to identify patterns in genre performance, user ratings, profit, ROI, and release trends.",
     business:
       "Which movie attributes are associated with stronger audience and commercial performance?",
+    dataSource:
+      "Movies_Dataset from Downloads, using movies metadata, ratings, links, credits, and keywords CSV files.",
     process: [
       "Loaded and inspected the movie dataset in Jupyter Notebook.",
       "Cleaned missing values, corrected data types, and explored correlations.",
@@ -82,7 +123,22 @@ const projects = [
       "Ratings alone do not fully explain commercial performance.",
       "Clean visual storytelling makes the project easier for nontechnical readers."
     ],
-    metrics: ["Python", "Main tool", "EDA", "Method", "Report", "Output"]
+    metrics: ["Python", "Main tool", "EDA", "Method", "Report", "Output"],
+    keyMetrics: [
+      "Cleaned movie rows: 45,430.",
+      "Movies with usable financial data: 5,375.",
+      "Movies joined with user-rating sample: 9,025.",
+      "Most common primary genre: Drama.",
+      "Top average-profit genre: Family; top average-revenue genre: Animation."
+    ],
+    recommendations: [
+      "Use profit and ROI together when evaluating movie performance.",
+      "Treat Animation, Family, Adventure, and Action as strong high-revenue candidates.",
+      "Use lower-budget Horror and niche films as ROI opportunities after validating budget quality.",
+      "Combine audience ratings with financial metrics to identify durable catalog value."
+    ],
+    conclusion:
+      "Movie success is multidimensional: blockbusters dominate total profit, while smaller films can produce high ROI. Better decisions should evaluate financial results and audience response together."
   },
   {
     number: "04",
@@ -94,8 +150,12 @@ const projects = [
     summary:
       "Built a standalone interactive dashboard for product reviews, brands, categories, pricing, and opportunity segments.",
     tools: ["Power BI", "DAX", "Power Query", "UX Design"],
+    executiveSummary:
+      "Built an executive command center for Sephora product and review data to analyze product performance, customer sentiment, brand engagement, pricing patterns, and product opportunity segments.",
     business:
       "Which brands, categories, price ranges, and products create the strongest review and recommendation opportunities?",
+    dataSource:
+      "Public Sephora product and skincare review dataset from Kaggle, including product metadata and more than one million customer review records.",
     process: [
       "Loaded Sephora product and review data into Power BI.",
       "Created summary tables, measures, slicers, reset bookmarks, and cross-filter interactions.",
@@ -106,7 +166,22 @@ const projects = [
       "Top brands and opportunity products can be explored through interactive filters.",
       "Price-band and opportunity segment views support product strategy decisions."
     ],
-    metrics: ["1M", "Reviews", "2K", "Products", "142", "Brands"]
+    metrics: ["1M", "Reviews", "2K", "Products", "142", "Brands"],
+    keyMetrics: [
+      "Total reviews analyzed: approximately 1.09 million.",
+      "Products analyzed: approximately 2.35 thousand reviewed products.",
+      "Brands represented: 142.",
+      "Average review rating: approximately 4.30.",
+      "Recommendation rate: approximately 83.7%; average product price: approximately $59.86."
+    ],
+    recommendations: [
+      "Promote hidden-gem products with strong ratings but lower review visibility.",
+      "Monitor high-visibility risk products with high review volume and weaker customer signals.",
+      "Focus category strategy on high-engagement skincare segments such as moisturizers, treatments, and cleansers.",
+      "Use price-band insights for campaign planning and product recommendation strategy."
+    ],
+    conclusion:
+      "The dashboard helps stakeholders identify where customer attention is strongest, which products may need improvement, and which products could benefit from additional promotion."
   }
 ];
 
@@ -273,9 +348,24 @@ function openProject(project) {
       </div>
 
       <section class="tab-panel" data-panel="overview">
-        <h3>Business Question</h3>
-        <p>${project.business}</p>
-        <p>Lorem ipsum dolor sit amet, consectetur adipiscing elit. Replace this paragraph with the final project background, dataset source, and stakeholder context.</p>
+        <div class="report-section">
+          <h3>Executive Summary</h3>
+          <p>${project.executiveSummary}</p>
+        </div>
+        <div class="report-grid">
+          <article>
+            <h4>Business Task / Question</h4>
+            <p>${project.business}</p>
+          </article>
+          <article>
+            <h4>Data Source</h4>
+            <p>${project.dataSource}</p>
+          </article>
+          <article>
+            <h4>Tools Used</h4>
+            <p>${project.tools.join(", ")}</p>
+          </article>
+        </div>
       </section>
 
       <section class="tab-panel" data-panel="process">
@@ -291,7 +381,6 @@ function openProject(project) {
             <h3>Interactive Dashboard Preview</h3>
             <p>Use the buttons and chart segments like Power BI filters. KPIs update instantly when a visitor clicks a segment.</p>
           </div>
-          <span>Live portfolio demo</span>
         </div>
         <div class="interactive-toolbar" data-project="${project.title}">
           ${Object.keys(interactive.filters)
@@ -311,10 +400,30 @@ function openProject(project) {
       </section>
 
       <section class="tab-panel" data-panel="insights">
-        <h3>Key Insights</h3>
-        <ul class="insight-list">
-          ${project.insights.map((item) => `<li>${item}</li>`).join("")}
-        </ul>
+        <div class="report-grid">
+          <article>
+            <h4>Key Metrics</h4>
+            <ul class="insight-list">
+              ${project.keyMetrics.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </article>
+          <article>
+            <h4>Key Insights</h4>
+            <ul class="insight-list">
+              ${project.insights.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </article>
+          <article>
+            <h4>Recommendations</h4>
+            <ul class="insight-list">
+              ${project.recommendations.map((item) => `<li>${item}</li>`).join("")}
+            </ul>
+          </article>
+        </div>
+        <div class="report-section conclusion-box">
+          <h3>Conclusion</h3>
+          <p>${project.conclusion}</p>
+        </div>
       </section>
     </div>
   `;

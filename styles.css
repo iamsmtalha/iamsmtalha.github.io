@@ -598,6 +598,7 @@ h3 {
   gap: 28px;
   padding: 34px;
   background: #111827;
+  color: var(--white);
 }
 
 .dialog-hero img {
@@ -606,6 +607,30 @@ h3 {
   object-fit: cover;
   border-radius: 6px;
   border: 1px solid var(--line);
+}
+
+.dialog-hero h2 {
+  color: var(--white);
+  font-size: clamp(30px, 4vw, 46px);
+  line-height: 1.05;
+  margin-bottom: 14px;
+}
+
+.dialog-hero p {
+  color: #dbeafe;
+  font-size: 16px;
+  line-height: 1.75;
+  margin-bottom: 18px;
+}
+
+.dialog-hero .project-tag {
+  color: var(--green);
+}
+
+.dialog-hero .tool-list span {
+  color: #e5f4ff;
+  background: rgba(45, 212, 191, 0.12);
+  border-color: rgba(45, 212, 191, 0.35);
 }
 
 .dialog-content {
@@ -643,6 +668,50 @@ h3 {
 
 .tab-panel.active {
   display: block;
+}
+
+.report-section {
+  padding: 20px;
+  margin-bottom: 18px;
+  background: rgba(23, 32, 51, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.report-section h3,
+.report-grid h4 {
+  margin-bottom: 8px;
+}
+
+.report-section p,
+.report-grid p {
+  margin-bottom: 0;
+}
+
+.report-grid {
+  display: grid;
+  grid-template-columns: repeat(3, minmax(0, 1fr));
+  gap: 14px;
+}
+
+.report-grid article {
+  padding: 18px;
+  background: rgba(23, 32, 51, 0.72);
+  border: 1px solid var(--line);
+  border-radius: 8px;
+}
+
+.report-grid h4 {
+  color: var(--white);
+  font-size: 14px;
+  text-transform: uppercase;
+  letter-spacing: 0.4px;
+}
+
+.conclusion-box {
+  margin-top: 16px;
+  border-color: rgba(45, 212, 191, 0.35);
+  background: rgba(45, 212, 191, 0.08);
 }
 
 .live-dashboard-head {
@@ -914,6 +983,10 @@ h3 {
 
   .portfolio-grid,
   .mini-dashboard {
+    grid-template-columns: 1fr;
+  }
+
+  .report-grid {
     grid-template-columns: 1fr;
   }
 
