@@ -475,6 +475,7 @@ h3 {
 .tool-list {
   display: flex;
   flex-wrap: wrap;
+  justify-content: flex-start;
   gap: 8px;
   margin-top: 18px;
 }
@@ -1006,6 +1007,13 @@ h3 {
     gap: 12px;
   }
 
+  .brand {
+    max-width: none;
+    font-size: clamp(12px, 4vw, 16px);
+    line-height: 1.25;
+    white-space: nowrap;
+  }
+
   .menu-toggle {
     display: block;
     order: 3;
@@ -1056,8 +1064,7 @@ h3 {
   }
 
   .hero-buttons,
-  .contact-list,
-  .tool-list {
+  .contact-list {
     justify-content: center;
   }
 
