@@ -1,6 +1,6 @@
 const projects = [
   {
-    number: "01",
+    number: "03",
     title: "Cyclistic Bike-Share Case Study",
     type: "Google Data Analytics Capstone",
     filters: ["excel", "sql", "power-bi"],
@@ -54,8 +54,7 @@ const projects = [
     screenshots: [
       "assets/bellabeat-dashboard-page-1.png",
       "assets/bellabeat-dashboard-page-2.png",
-      "assets/bellabeat-dashboard-page-3.png",
-      "assets/bellabeat-dashboard-page-4.png"
+      "assets/bellabeat-dashboard-page-3.png"
     ],
     summary:
       "Studied Fitbit activity and sleep trends to recommend Bellabeat app marketing improvements.",
@@ -94,7 +93,7 @@ const projects = [
       "Bellabeat can use activity, sedentary, and sleep-tracking patterns to market a complete wellness experience that connects movement, recovery, hydration, mindfulness, and daily routines."
   },
   {
-    number: "03",
+    number: "04",
     title: "Movie Data Analysis with Python",
     type: "Python EDA Project",
     filters: ["python"],
@@ -112,7 +111,7 @@ const projects = [
     business:
       "Which movie attributes are associated with stronger audience and commercial performance?",
     dataSource:
-      "Movies_Dataset from Downloads, using movies metadata, ratings, links, credits, and keywords CSV files.",
+      "Movies dataset from Kaggle, using movies metadata, ratings, links, credits, and keywords CSV files.",
     process: [
       "Loaded and inspected the movie dataset in Jupyter Notebook.",
       "Cleaned missing values, corrected data types, and explored correlations.",
@@ -141,7 +140,7 @@ const projects = [
       "Movie success is multidimensional: blockbusters dominate total profit, while smaller films can produce high ROI. Better decisions should evaluate financial results and audience response together."
   },
   {
-    number: "04",
+    number: "01",
     title: "Sephora Product Experience Command Center",
     type: "Advanced Power BI Dashboard",
     filters: ["power-bi"],
@@ -322,6 +321,7 @@ function projectCard(project) {
 function renderProjects(filter = "all") {
   portfolioGrid.innerHTML = projects
     .filter((project) => filter === "all" || project.filters.includes(filter))
+    .sort((a, b) => Number(a.number) - Number(b.number))
     .map(projectCard)
     .join("");
 }
@@ -494,6 +494,30 @@ function legacyMiniDashboard(projectTitle, filterName) {
 }
 
 renderProjects();
+
+const themeToggle = document.querySelector("#themeToggle");
+const themeIcon = themeToggle?.querySelector(".theme-icon");
+const themeLabel = themeToggle?.querySelector(".theme-label");
+
+function setTheme(theme) {
+  document.documentElement.dataset.theme = theme;
+  if (themeIcon) themeIcon.textContent = theme === "light" ? "☀" : "☾";
+  if (themeLabel) themeLabel.textContent = theme === "light" ? "Light" : "Dark";
+  if (themeToggle) {
+    themeToggle.setAttribute(
+      "aria-label",
+      theme === "light" ? "Switch to dark theme" : "Switch to light theme"
+    );
+  }
+  localStorage.setItem("portfolio-theme", theme);
+}
+
+setTheme(localStorage.getItem("portfolio-theme") || "dark");
+
+themeToggle?.addEventListener("click", () => {
+  const current = document.documentElement.dataset.theme || "dark";
+  setTheme(current === "dark" ? "light" : "dark");
+});
 
 document.querySelectorAll(".tab").forEach((tab) => {
   tab.addEventListener("click", () => {
