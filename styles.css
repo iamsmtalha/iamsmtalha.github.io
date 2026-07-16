@@ -661,7 +661,8 @@ h3 {
 .dialog-hero img {
   width: 100%;
   aspect-ratio: 4 / 3;
-  object-fit: cover;
+  object-fit: contain;
+  background: var(--section-bg);
   border-radius: 6px;
   border: 1px solid var(--line);
 }
@@ -861,7 +862,7 @@ h3 {
 .screenshot-gallery img {
   width: 100%;
   aspect-ratio: 16 / 10;
-  object-fit: cover;
+  object-fit: contain;
   background: var(--section-bg);
   border: 1px solid var(--line);
   border-radius: 8px;
@@ -1099,7 +1100,13 @@ h3 {
   }
 
   .project-thumb {
-    min-height: 230px;
+    min-height: 0;
+    aspect-ratio: 16 / 10;
+    background: var(--surface);
+  }
+
+  .project-thumb img {
+    object-fit: contain;
   }
 }
 
