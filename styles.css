@@ -939,10 +939,7 @@ h3 {
 }
 
 .mini-segment {
-  display: grid;
-  grid-template-columns: 120px 1fr 44px;
-  align-items: center;
-  gap: 12px;
+  display: block;
   width: 100%;
   padding: 10px 12px;
   color: var(--text);
@@ -960,40 +957,10 @@ h3 {
   box-shadow: 0 12px 28px rgba(45, 212, 191, 0.08);
 }
 
-.mini-segment-label,
-.mini-segment b {
+.mini-segment-label {
   color: var(--white);
   font-size: 12px;
   font-weight: 800;
-}
-
-.mini-segment i {
-  display: block;
-  height: 12px;
-  overflow: hidden;
-  background: rgba(148, 163, 184, 0.18);
-  border-radius: 999px;
-}
-
-.mini-segment em {
-  display: block;
-  height: 100%;
-  background: linear-gradient(90deg, var(--green), var(--blue));
-  border-radius: inherit;
-  transition: width 220ms ease;
-}
-
-.bar-demo {
-  display: grid;
-  gap: 10px;
-  margin-top: 12px;
-}
-
-.bar-demo span {
-  display: block;
-  height: 13px;
-  background: var(--green);
-  border-radius: 999px;
 }
 
 .modal-actions {
@@ -1089,10 +1056,6 @@ h3 {
 
   .live-dashboard-head {
     flex-direction: column;
-  }
-
-  .mini-segment {
-    grid-template-columns: 90px 1fr 38px;
   }
 
   .project-card {

@@ -327,8 +327,6 @@ function renderProjects(filter = "all") {
 }
 
 function openProject(project) {
-  const interactive = interactiveData[project.title];
-  const defaultFilter = Object.keys(interactive.filters)[0];
   dialogContent.innerHTML = `
     <div class="dialog-hero">
       <img src="${project.image}" alt="${project.title} dashboard preview" />
@@ -341,7 +339,7 @@ function openProject(project) {
     </div>
     <div class="dialog-content">
       <div class="dialog-tabs" role="tablist">
-        <button class="dialog-tab active" data-tab="dashboard" type="button">Live Dashboard</button>
+        <button class="dialog-tab active" data-tab="dashboard" type="button">Interactive View</button>
         <button class="dialog-tab" data-tab="overview" type="button">Overview</button>
         <button class="dialog-tab" data-tab="process" type="button">Process</button>
         <button class="dialog-tab" data-tab="insights" type="button">Insights</button>
@@ -378,17 +376,17 @@ function openProject(project) {
       <section class="tab-panel active" data-panel="dashboard">
         <div class="live-dashboard-head">
           <div>
-            <h3>Interactive Dashboard Preview</h3>
+            <h3>Interactive View</h3>
             <p>Use the buttons and chart segments like Power BI filters. KPIs update instantly when a visitor clicks a segment.</p>
           </div>
         </div>
         <div class="interactive-toolbar" data-project="${project.title}">
-          ${Object.keys(interactive.filters)
+          ${Object.keys(interactiveData[project.title].filters)
             .map((filter, index) => `<button class="interactive-filter ${index === 0 ? "active" : ""}" type="button" data-filter-name="${filter}">${filter}</button>`)
             .join("")}
         </div>
         <div class="mini-dashboard" data-mini-dashboard="${project.title}">
-          ${renderMiniDashboard(project.title, defaultFilter)}
+          ${renderMiniDashboard(project.title, Object.keys(interactiveData[project.title].filters)[0])}
         </div>
 
         <h3 class="gallery-heading">Dashboard & Analysis Screenshots</h3>
@@ -433,7 +431,6 @@ function openProject(project) {
 function renderMiniDashboard(projectTitle, filterName) {
   const data = interactiveData[projectTitle];
   const values = data.filters[filterName];
-  const bars = data.bars[filterName];
   const labels = data.chartLabels;
   return `
     <div class="mini-kpis" data-mini-kpis="${projectTitle}">
@@ -441,13 +438,11 @@ function renderMiniDashboard(projectTitle, filterName) {
     </div>
     <div class="mini-chart" data-current-filter="${filterName}">
       <div class="mini-chart-title">Click a chart segment to cross-filter KPIs</div>
-      ${bars
+      ${labels
         .map(
-          (bar, index) => `
+          (label, index) => `
             <button class="mini-segment ${index === 0 ? "active" : ""}" type="button" data-segment-index="${index}">
-              <span class="mini-segment-label">${labels[index]}</span>
-              <i><em style="width: ${bar}%"></em></i>
-              <b>${bar}%</b>
+              <span class="mini-segment-label">${label}</span>
             </button>
           `
         )
@@ -473,24 +468,6 @@ function updateMiniSegment(projectTitle, filterName, segmentIndex) {
 function getActiveFilterName(projectTitle) {
   const toolbar = dialogContent.querySelector(`.interactive-toolbar[data-project="${projectTitle}"]`);
   return toolbar.querySelector(".interactive-filter.active").dataset.filterName;
-}
-
-function legacyMiniDashboard(projectTitle, filterName) {
-  const values = interactiveData[projectTitle].filters[filterName];
-  const bars = interactiveData[projectTitle].bars[filterName];
-  return `
-    <div class="mini-card"><strong>${values[0]}</strong><span>${values[1]}</span></div>
-    <div class="mini-card"><strong>${values[2]}</strong><span>${values[3]}</span></div>
-    <div class="mini-card"><strong>${values[4]}</strong><span>${values[5]}</span></div>
-    <div class="mini-card">
-      <span>Relative pattern</span>
-      <div class="bar-demo">
-        <span style="width: ${bars[0]}%"></span>
-        <span style="width: ${bars[1]}%"></span>
-        <span style="width: ${bars[2]}%"></span>
-      </div>
-    </div>
-  `;
 }
 
 renderProjects();
