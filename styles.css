@@ -1082,6 +1082,10 @@ h3 {
     width: min(100% - 28px, 1120px);
   }
 
+  .hero .container {
+    width: min(100% - 20px, 1120px);
+  }
+
   .hero-grid {
     text-align: left;
   }
@@ -1102,6 +1106,14 @@ h3 {
 
   .hero-copy .eyebrow + h1 {
     margin-top: 0.5px;
+  }
+
+  .hero-intro {
+    max-width: 100%;
+    margin-bottom: 24px;
+    font-size: 15px;
+    line-height: 1.58;
+    text-wrap: pretty;
   }
 
   .timeline article,
