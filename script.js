@@ -2,6 +2,7 @@ const projects = [
   {
     number: "03",
     title: "Cyclistic Bike-Share Case Study",
+    githubUrl: "https://github.com/iamsmtalha/cyclistic-bike-share-case-study",
     type: "Google Data Analytics Capstone",
     filters: ["excel", "sql", "power-bi"],
     image: "assets/project-cyclistic.png",
@@ -48,6 +49,7 @@ const projects = [
   {
     number: "02",
     title: "Bellabeat Wellness Case Study",
+    githubUrl: "https://github.com/iamsmtalha/bellabeat-case-study",
     type: "Smart Device Usage Analysis",
     filters: ["excel", "sql", "power-bi"],
     image: "assets/project-bellabeat.png",
@@ -95,6 +97,7 @@ const projects = [
   {
     number: "04",
     title: "Movie Data Analysis with Python",
+    githubUrl: "https://github.com/iamsmtalha/movie-data-analysis-python",
     type: "Python EDA Project",
     filters: ["python"],
     image: "assets/project-movies.png",
@@ -142,13 +145,14 @@ const projects = [
   {
     number: "01",
     title: "Sephora Product Experience Command Center",
+    githubUrl: "https://github.com/iamsmtalha/sephora-powerbi-dashboard",
     type: "Advanced Power BI Dashboard",
-    filters: ["power-bi"],
+    filters: ["power-bi", "python"],
     image: "assets/project-sephora.png",
     screenshots: ["assets/sephora-dashboard-pdf-page-1.png"],
     summary:
       "Built a standalone interactive dashboard for product reviews, brands, categories, pricing, and opportunity segments.",
-    tools: ["Power BI", "DAX", "Power Query", "UX Design"],
+    tools: ["Power BI", "Python", "pandas", "DAX", "Power Query"],
     executiveSummary:
       "Built an executive command center for Sephora product and review data to analyze product performance, customer sentiment, brand engagement, pricing patterns, and product opportunity segments.",
     business:
@@ -312,6 +316,7 @@ function projectCard(project) {
         </div>
         <div class="project-actions">
           <button class="card-link" type="button" data-open-project="${project.title}">View Project</button>
+          <a class="card-link secondary" href="${project.githubUrl}" target="_blank" rel="noreferrer">View on GitHub</a>
         </div>
       </div>
     </article>
@@ -335,6 +340,9 @@ function openProject(project) {
         <h2>${project.title}</h2>
         <p>${project.summary}</p>
         <div class="tool-list">${project.tools.map((tool) => `<span>${tool}</span>`).join("")}</div>
+        <div class="modal-actions">
+          <a class="card-link secondary" href="${project.githubUrl}" target="_blank" rel="noreferrer">View on GitHub</a>
+        </div>
       </div>
     </div>
     <div class="dialog-content">

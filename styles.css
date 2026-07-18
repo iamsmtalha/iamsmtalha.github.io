@@ -418,15 +418,23 @@ h3 {
   position: absolute;
   inset: auto 18px 18px auto;
   padding: 8px 12px;
-  color: var(--white);
-  background: rgba(15, 23, 42, 0.78);
-  border: 1px solid rgba(255, 255, 255, 0.16);
+  color: #f8fafc;
+  background: rgba(15, 23, 42, 0.86);
+  border: 1px solid rgba(255, 255, 255, 0.22);
   border-radius: 999px;
   font-size: 11px;
   font-weight: 800;
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.24);
   opacity: 0;
   transform: translateY(6px);
   transition: opacity 180ms ease, transform 180ms ease;
+}
+
+[data-theme="light"] .project-thumb::after {
+  color: #0f172a;
+  background: rgba(255, 255, 255, 0.94);
+  border-color: rgba(20, 184, 166, 0.34);
+  box-shadow: 0 10px 24px rgba(15, 23, 42, 0.16);
 }
 
 .project-card:hover .project-thumb::after {
@@ -510,12 +518,36 @@ h3 {
   border-radius: 999px;
   font-size: 12px;
   font-weight: 800;
+  transition: color 180ms ease, background 180ms ease, border-color 180ms ease, box-shadow 180ms ease, transform 180ms ease;
 }
 
 .card-link.secondary {
-  color: var(--text);
-  background: rgba(148, 163, 184, 0.12);
-  border-color: rgba(148, 163, 184, 0.26);
+  color: #67e8f9;
+  background: rgba(14, 165, 233, 0.12);
+  border-color: rgba(45, 212, 191, 0.34);
+}
+
+.card-link.secondary:hover,
+.card-link.secondary:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, rgba(45, 212, 191, 0.95), rgba(56, 189, 248, 0.88));
+  border-color: rgba(45, 212, 191, 0.9);
+  box-shadow: 0 0 0 3px rgba(45, 212, 191, 0.16), 0 12px 28px rgba(45, 212, 191, 0.28);
+  transform: translateY(-1px);
+}
+
+[data-theme="light"] .card-link.secondary {
+  color: #0f766e;
+  background: rgba(240, 253, 250, 0.92);
+  border-color: rgba(20, 184, 166, 0.42);
+}
+
+[data-theme="light"] .card-link.secondary:hover,
+[data-theme="light"] .card-link.secondary:focus-visible {
+  color: #ffffff;
+  background: linear-gradient(135deg, #14b8a6, #0ea5e9);
+  border-color: rgba(20, 184, 166, 0.88);
+  box-shadow: 0 0 0 3px rgba(20, 184, 166, 0.18), 0 12px 28px rgba(14, 165, 233, 0.24);
 }
 
 .timeline,

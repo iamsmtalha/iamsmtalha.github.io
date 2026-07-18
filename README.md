@@ -1,42 +1,50 @@
-# Talha Data Analyst Portfolio
+# Talha | Data Analyst Portfolio
 
-Static portfolio website inspired by a clean data analyst portfolio structure, using a dark analytics theme and Poppins typography.
+A professional data analyst portfolio website built to present business case studies, Python analysis, SQL work, and Power BI dashboard projects in a clean, recruiter-friendly format.
+
+The site highlights end-to-end analytics work, including business questions, data sources, tools used, analytical process, key metrics, insights, recommendations, and project visuals.
+
+## Portfolio Sections
 
 - Home
 - About
 - Portfolio
-- Achievements
+- Certifications
 - Contact
 
-## Portfolio Interaction
+## Featured Projects
 
-The portfolio is browsing-focused rather than download-focused. Visitors can:
+### Sephora Product Experience Dashboard
+Advanced Power BI dashboard focused on product reviews, brand performance, pricing, recommendation rates, and product opportunity segments.
 
-- Filter projects by tool category
-- Click each project card
-- Explore Overview, Process, Interactive View, and Insights tabs
-- View dashboard and analysis screenshots inside each project modal
-- Later open live dashboards, GitHub repositories, LinkedIn posts, and notebooks
+### Bellabeat Smart Device Usage Case Study
+Wellness analytics case study using Fitbit smart-device data to understand activity, sleep, sedentary time, and user engagement behavior.
 
-## Content To Replace
+### Cyclistic Bike-Share Case Study
+Bike-share analysis comparing annual members and casual riders to support membership conversion strategy.
 
-Before publishing, update these placeholders:
+### Movie Data Analysis with Python
+Python exploratory data analysis project focused on movie metadata, genres, ratings, revenue, profit, and ROI patterns.
 
-- Email address
-- LinkedIn URL
-- GitHub URL
-- Resume or CV link, if needed
-- Education section
-- Certification section
-- Live Power BI dashboard links
-- GitHub repository links for each project
+## Website Features
 
-## GitHub Pages
+- Responsive portfolio layout
+- Dark and light theme toggle
+- Project filtering by tool category
+- Clickable project cards
+- GitHub repository buttons for project code and scripts
+- Project modals with Overview, Process, Interactive View, and Insights tabs
+- Dashboard and analysis screenshots
+- Certification section with credential links
+- Contact links for email and LinkedIn
 
-Upload the contents of this folder to a GitHub Pages repository. Do not upload the parent folder itself; upload:
+## Technology
 
-- `index.html`
-- `styles.css`
-- `script.js`
-- `.nojekyll`
-- `assets/`
+- HTML
+- CSS
+- JavaScript
+- GitHub Pages
+
+## Live Portfolio
+
+This website is designed for GitHub Pages deployment as a static portfolio site.
